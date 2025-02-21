@@ -2,6 +2,23 @@ mod inventory;
 mod orders;
 
 fn main() {
-    println!("The manager of our inventory is {}", inventory::MANAGER);
-    println!("The manager of our orders is {}", orders::MANAGER);
+    println!(
+        "Our managers are {}, and {}. We also have {}sqf floor space",
+        inventory::MANAGER,
+        orders::MANAGER,
+        inventory::FLOOR_SPACE
+    );
+
+    inventory::talk_to_manager();
+
+    let favorite_catagory = inventory::ProductCatagory::Hammers;
+    println!("My favorite category of item is {favorite_catagory:?}");
+
+    let tall_ladder = inventory::Item {
+        name: "Tacos".to_string(),
+        item_category: favorite_catagory,
+        quantity: 54,
+    };
+
+    println!("{:#?}", tall_ladder)
 }
