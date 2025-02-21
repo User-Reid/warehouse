@@ -11,10 +11,10 @@ fn main() {
 
     inventory::talk_to_manager();
 
-    let favorite_catagory = inventory::ProductCatagory::Hammers;
+    let favorite_catagory = inventory::products::ProductCatagory::Hammers;
     println!("My favorite category of item is {favorite_catagory:?}");
 
-    let tall_ladder = inventory::Item {
+    let tall_ladder = inventory::products::Item {
         name: "Tacos".to_string(),
         item_category: favorite_catagory,
         quantity: 54,
