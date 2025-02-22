@@ -2,12 +2,12 @@ mod inventory;
 mod orders;
 
 use inventory::products::{Item, ProductCatagory};
-use inventory::{talk_to_manager, FLOOR_SPACE, MANAGER};
+use inventory::{talk_to_manager, FLOOR_SPACE};
 
 fn main() {
     println!(
         "Our managers are {}, and {}. We also have {}sqf floor space",
-        MANAGER,
+        inventory::MANAGER,
         orders::MANAGER,
         FLOOR_SPACE
     );
