@@ -1,20 +1,23 @@
 mod inventory;
 mod orders;
 
+use inventory::products::{Item, ProductCatagory};
+use inventory::{talk_to_manager, FLOOR_SPACE, MANAGER};
+
 fn main() {
     println!(
         "Our managers are {}, and {}. We also have {}sqf floor space",
-        inventory::MANAGER,
+        MANAGER,
         orders::MANAGER,
-        inventory::FLOOR_SPACE
+        FLOOR_SPACE
     );
 
-    inventory::talk_to_manager();
+    talk_to_manager();
 
-    let favorite_catagory = inventory::products::ProductCatagory::Hammers;
+    let favorite_catagory = ProductCatagory::Hammers;
     println!("My favorite category of item is {favorite_catagory:?}");
 
-    let tall_ladder = inventory::products::Item {
+    let tall_ladder = Item {
         name: "Tacos".to_string(),
         item_category: favorite_catagory,
         quantity: 54,
