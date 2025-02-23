@@ -1,10 +1,12 @@
-#[derive(Debug)]
+use fake::Dummy;
+
+#[derive(Debug, Dummy)]
 pub enum ProductCatagory {
     Ladders,
     Hammers,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Dummy)]
 pub struct Item {
     pub name: String,
     pub item_category: ProductCatagory,
