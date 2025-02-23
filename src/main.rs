@@ -1,8 +1,8 @@
 mod inventory;
 mod orders;
 
-use inventory::products::{self, ProductCatagory};
-use inventory::{talk_to_manager, FLOOR_SPACE};
+use inventory::products::{Item, ProductCatagory};
+use inventory::FLOOR_SPACE;
 
 fn main() {
     println!(
@@ -12,16 +12,9 @@ fn main() {
         FLOOR_SPACE
     );
 
-    talk_to_manager();
-
     let favorite_catagory = ProductCatagory::Hammers;
     println!("My favorite category of item is {favorite_catagory:?}");
 
-    let tall_ladder = products::Item {
-        name: "Tacos".to_string(),
-        item_category: favorite_catagory,
-        quantity: 54,
-    };
-
+    let tall_ladder = Item::new("Taco-town".to_string(), ProductCatagory::Hammers, 120);
     println!("{:#?}", tall_ladder)
 }
