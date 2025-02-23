@@ -1,8 +1,7 @@
 mod inventory;
 mod orders;
 
-use inventory::products::{Item, ProductCatagory};
-use inventory::{MANAGER as INVENTORY_MANAGER, FLOOR_SPACE};
+use inventory::{MANAGER as INVENTORY_MANAGER, Item, ProductCatagory, FLOOR_SPACE};
 use orders::MANAGER as ORDERS_MANAGER;
 
 fn main() {
